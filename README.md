@@ -48,14 +48,12 @@ How many users to start per second. Controls how quickly the load ramps up.
 ## Modifying Tests
 
 Edit `locustfile.py` to modify the test scenarios. The file includes:
-- Login simulation in `on_start` (currently set for HTML forms; API example commented)
-- Commented placeholder tasks (e-commerce simulation examples)
-- Active basic tasks for documented endpoints:
+- Login simulation in `on_start` (set for HTML forms with Rails CSRF protection)
+- Active basic tasks for HTML pages:
   - GET /
-  - GET /api/endpoint
-  - POST /api/items
+  - GET /admin/dashboard
 
-Uncomment and customize the placeholder tasks or add new tasks for your specific endpoints. Update login method based on whether your app uses HTML forms or API authentication.
+For examples of additional task types (e-commerce, API, etc.), see `locustfile_examples.py`. Uncomment and customize these examples or add new tasks for your specific page URLs. The setup is configured for HTML-based applications without API endpoints.
 
 ## Reports
 
